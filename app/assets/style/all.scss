@@ -1,0 +1,67 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "./helpers/variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@import './layout/index.scss';
+
+body {
+  padding-top: 92px;
+}
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 2px solid transparent;
+  z-index: 1;
+  .navbar-decoration {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, $primary 0%, $primary 50%, $success 50%, $success 100%);
+  }
+  .navbar-toggler-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $gray-dark;
+    @include media-breakpoint-up(md) {
+      position: relative;
+      width: auto;
+      background-color: transparent;
+    }
+  }
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include media-breakpoint-up(md) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+footer {
+  font-size: $font-size-base * 0.75;
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base;
+  }
+}
+
+.title span {
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin-top: 1rem;
+  background-color: $primary;
+}

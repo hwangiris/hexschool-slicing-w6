@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%- title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./assets/style/all.css">
+  </head>
+
+  <body class="<%- current %>-page">
+    <nav class="navbar navbar-expand-md navbar-dark bg-gray-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/images/logo.svg" height="42" class="d-md-block d-none" alt="Coding Home Logo">
+          <img src="./assets/images/logo2.svg" height="42" class="d-md-none" alt="Coding Home Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon d-block"></span>
+        </button>
+        <div class="navbar-decoration"></div>
+        <div class="collapse navbar-collapse ms-auto flex-grow-0" id="navbarSupportedContent">
+          <ul class="navbar-nav text-center gap-md-3 gap-2 py-md-0 py-3 mb-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">課程介紹</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex justify-content-center gap-1" href="#">
+                <span class="material-icons me-1">account_circle</span>登入
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <%- contents %>
+
+    <footer class="font-monospace text-secondary text-center py-4 bg-gray-dark">
+      Coding Home © 2022 All Rights Reserved
+    </footer>
+
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+
+</html>

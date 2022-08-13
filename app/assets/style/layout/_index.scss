@@ -1,0 +1,100 @@
+@mixin text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient($success, $primary);
+}
+
+.index-page {
+  header {
+    @include media-breakpoint-up(md) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    .container {
+      padding-top: 85px;
+      padding-bottom: 85px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../images/bg_home_mobile.jpg');
+      @include media-breakpoint-up(md) {
+        padding-top: 130px;
+        padding-bottom: 130px;
+        background-image: url('../images/bg_home.jpg');
+      }
+    }
+    .header-decoration {
+      background-color: $gray-800;
+      &:before, &:after {
+        content: ' ';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: $white;
+      }
+      &:before {
+        top: -5px;
+        left: -5px;
+      }
+      &:after {
+        top: -5px;
+        right: -5px;
+      }
+      > :first-child {
+        &:before, &:after {
+          content: ' ';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: $white;
+        }
+        &:before {
+          bottom: -5px;
+          right: -5px;
+        }
+        &:after {
+          bottom: -5px;
+          left: -5px;
+        }
+      }
+    }
+    h1 {
+      font-size: 1.5rem;
+      @include media-breakpoint-up(md) {
+        font-size: 3rem;
+      }
+    }
+    .highlight {
+      @include text-gradient;
+    }
+    p {
+      font-size: .875rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+.card--feature {
+  position: relative;
+  background-color: $dark;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  opacity: 0.5;
+  transition: opacity 0.3s, background-color 0.3s, border-color 0.3s;
+  @include media-breakpoint-up(xl) {
+    background-color: $gray-dark;
+  }
+  &:hover {
+    background-color: $dark;
+    border-color: $primary;
+    opacity: 1;
+    .material-icons {
+      @include text-gradient;
+    }
+  }
+  .material-icons {
+    font-size: 3.125rem;
+  }
+}
