@@ -34,9 +34,9 @@
               <a class="nav-link" href="./courses.html">課程介紹</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center gap-1" href="#">
+              <button type="button" class="nav-link d-flex justify-content-center gap-1 w-100 bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#loginModal">
                 <span class="material-icons me-1">account_circle</span>登入
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -45,9 +45,44 @@
 
     <%- contents %>
 
-    <footer class="font-monospace text-secondary text-center py-4 bg-gray-dark">
+    <footer class="font-monospace text-muted text-center py-4 mt-auto">
       Coding Home © 2022 All Rights Reserved
     </footer>
+
+    <div class="modal fade modal--login" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-md bg-gray-dark">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header justify-content-center pt-4 pb-3">
+            <h3 class="modal-title">登入</h3>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-5">
+                <label for="emailInput" class="form-label text-secondary mb-2">信箱</label>
+                <input type="email" class="form-control bg-dark px-3 rounded-1" id="emailInput" placeholder="請輸入信箱">
+              </div>
+              <div class="mb-5">
+                <label for="passwordInput" class="form-label text-secondary mb-2">密碼</label>
+                <input type="password" class="form-control bg-dark px-3 rounded-1" id="passwordInput" placeholder="請輸入密碼">
+              </div>
+              <button type="button" class="btn btn-horizontal btn-gradient btn-reverse fs-5 w-100" data-bs-dismiss="modal">登入</button>
+            </form>
+          </div>
+          <div class="modal-footer flex-column pt-4 pb-6 gap-3">
+            <div class="separator text-secondary w-100">其他登入方式</div>
+            <a href="#" class="btn btn-outline-light d-flex align-items-center w-100">
+              <img src="./assets/images/icon_fb.svg" width="24" alt="facebook icon">
+              <span class="flex-fill pe-4">Facebook 登入</span>
+            </a>
+            <a href="#" class="btn btn-outline-light d-flex align-items-center w-100 mt-md-2">
+              <img src="./assets/images/icon_google.svg" width="24" alt="google icon">
+              <span class="flex-fill pe-4">Google 登入</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="./assets/js/vendors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
