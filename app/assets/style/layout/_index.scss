@@ -87,14 +87,186 @@
     background-color: $gray-dark;
   }
   &:hover {
-    background-color: $dark;
-    border-color: $primary;
-    opacity: 1;
-    .material-icons {
-      @include text-gradient;
+    @include media-breakpoint-up(lg) {
+      background-color: $dark;
+      border-color: $primary;
+      opacity: 1;
+      .material-icons {
+        @include text-gradient;
+      }
     }
   }
   .material-icons {
     font-size: 3.125rem;
+  }
+}
+
+.card--process {
+  padding-top: 24px; // 48/2
+  > div {
+    border-radius: .75rem;
+  }
+  strong {
+    left: 44px; // 48-4
+    font-size: 3rem;
+  }
+}
+
+.card--article {
+  height: 100%;
+  &:before, &:after {
+    content: ' ';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border: solid $primary;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  &:before {
+    top: 0;
+    left: 0;
+    border-width: 1px 0 0 1px;
+    border-top-left-radius: .75rem;
+  }
+  &:after {
+    top: 0;
+    right: 0;
+    border-width: 1px 1px 0 0;
+    border-top-right-radius: .75rem;
+  }
+  .card-body {
+    &:before, &:after {
+      content: ' ';
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      border: solid $primary;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:before {
+      bottom: 0;
+      right: 0;
+      border-width: 0 1px 1px 0;
+      border-bottom-right-radius: .75rem;
+    }
+    &:after {
+      bottom: 0;
+      left: 0;
+      border-width: 0 0 1px 1px;
+      border-bottom-left-radius: .75rem;
+    }
+  }
+  .card-text {
+    @include line-clamp(3);
+  }
+  &:hover {
+    @include media-breakpoint-up(lg) {
+      &:before, &:after {
+        opacity: 1;
+      }
+      .card-body {
+        &:before, &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.card--course {
+  height: 100%;
+  border-radius: 1.5rem;
+  border-color: $gray-dark;
+  &:hover {
+    @include media-breakpoint-up(lg) {
+      border-color: $primary;
+    }
+  }
+  .card-footer {
+    border-color: $gray-400;
+    background-color: transparent;
+  }
+  img {
+    width: 100px;
+  }
+  p {
+    @include line-clamp(3);
+  }
+}
+
+.card--advantage {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  z-index: 0;
+  @include media-breakpoint-up(md) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 216px;
+    padding-bottom: 216px;
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  > * {
+    position: relative;
+    z-index: 0;
+  }
+  .material-icons, p {
+    transition: opacity 0.3s;
+    @include media-breakpoint-up(md) {
+      opacity: 0.5;
+    }
+  }
+  .material-icons {
+    color: $primary;
+    font-size: 2em;
+    @include media-breakpoint-up(md) {
+      color: $white;
+    }
+  }
+  .title span:last-child {
+    transition: background-color 0.3s;
+    @include media-breakpoint-up(md) {
+      background-color: $white;
+    }
+  }
+  &:hover {
+    @include media-breakpoint-up(lg) {
+      &::before {
+        opacity: .12;
+      }
+      .material-icons, p {
+        opacity: 1;
+      }
+      .material-icons {
+        color: $primary;
+      }
+      .title span:last-child {
+        background-color: $primary;
+      }
+    }
   }
 }
