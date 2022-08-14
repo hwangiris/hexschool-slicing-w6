@@ -1,0 +1,87 @@
+.payment__step {
+  @include media-breakpoint-up(md) {
+    background-color: $dark;
+  }
+}
+
+.step__item {
+  position: relative;
+  &::before, &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    width: 50%;
+    height: 2px;
+    background-color: $gray-300;
+    z-index: 0;
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+  &:first-child {
+    &::before {
+      display: none;
+    }
+  }
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+  &.completed {
+    &::before, &::after {
+      background-color: $primary;
+    }
+  }
+  &.process {
+    &::before {
+      background-color: $primary;
+    }
+    &::after {
+      background-color: $gray-300;
+    }
+    + .step__item {
+      &::before {
+        background-color: $gray-300;
+      }
+    }
+  }
+  .rounded-circle {
+    position: relative;
+    border: 1px solid;
+    z-index: 1;
+    @at-root {
+      :not(.completed)#{&}, :not(.process)#{&} {
+        border-color: $gray-300;
+        background-color: $gray-dark;
+      }
+      .completed#{&}, .process#{&} {
+        color: $white;
+        background-color: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+  .step__text {
+    @at-root {
+      :not(.completed)#{&}, :not(.process)#{&} {
+        color: $gray-400;
+      }
+      .completed#{&}, .process#{&} {
+        color: $primary;
+      }
+    }
+  }
+  span {
+    display: block;
+    font-size: 0.75rem;
+    &:not(.material-icons) {
+      width: 0.75rem;
+      line-height: 1;
+    }
+  }
+}
