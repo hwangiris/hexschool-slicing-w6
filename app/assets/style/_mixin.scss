@@ -1,0 +1,13 @@
+@mixin text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient($success, $primary);
+}
+
+@mixin line-clamp($value) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $value;
+  -webkit-box-orient: vertical;
+  overflow : hidden;
+}

@@ -1,0 +1,7 @@
+footer {
+  font-size: $font-size-base * 0.75;
+  background-color: #1a1a1a;
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base;
+  }
+}
