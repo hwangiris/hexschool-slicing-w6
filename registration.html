@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker-bs5.min.css">
     <link rel="stylesheet" href="./assets/style/all.css">
   </head>
 
@@ -81,7 +82,66 @@
   </section>
   <section>
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-4 mb-md-0 mb-6">
+          <div class="card card--preview bg-gray-dark px-md-5 py-md-6 p-4 border-0 shadow-sm">
+            <img src="./assets/images/teacher01.jpg" width="100" class="mx-auto mb-4 rounded-circle border border-3 border-primary" alt="Belinda">
+            <div class="card-body p-0">
+              <h6 class="card-title text-center mb-1">2022 Python 全攻略｜從入門到實務</h6>
+              <div class="text-primary text-center">前端語言</div>
+              <p class="card-text mt-2 mb-0">帶領無基礎、文組生、對網頁設計有興趣的人，進入網站工程領域的基礎課，將從最基礎的 HTML 語法出發。</p>
+            </div>
+          </div>          
+        </div>
+        <div class="form--registration col-md-8">
+          <form class="bg-dark pe-md-5 pe-4 py-md-6 py-4">
+            <h1 class="h3 text-center mb-md-6 mb-4">課程報名</h1>
+            <h5 class="text-md-start text-center mb-md-2 mb-3">選擇付款方式</h5>
+            <div class="btn__group--payment d-flex flex-wrap gap-3 text-nowrap mb-5">
+              <button type="button" class="btn btn-outline-primary px-md-5 px-2 py-3">信用卡付款</button>
+              <button type="button" class="btn btn-outline-light px-md-5 px-2 py-3">超商繳款</button>
+              <button type="button" class="btn btn-outline-light px-md-5 px-2 py-3">ATM轉帳</button>
+              <button type="button" class="btn btn-outline-light px-md-5 px-2 py-3">12期分期付款</button>
+            </div>
+            <h5 class="text-md-start text-center mb-4">訂單資訊</h5>
+            <div class="row">
+              <div class="col-md-6 pe-lg-4 mb-4">
+                <label for="exampleFormControlInput1" class="form-label text-secondary mb-2">姓名</label>
+                <input type="text" class="form-control px-3 bg-dark rounded-1" id="exampleFormControlInput1" placeholder="請輸入姓名">
+              </div>
+              <div class="col-md-6 ps-lg-4 mb-4">
+                <label for="phoneInput" class="form-label text-secondary mb-2">電話</label>
+                <input type="tel" inputmode="tel" class="form-control px-3 bg-dark rounded-1" id="phoneInput" placeholder="請輸入電話號碼">
+              </div>
+              <div class="col-md-12 mb-4">
+                <label for="emailControlInput" class="form-label text-secondary mb-2">Email</label>
+                <input type="email" inputmode="email" class="form-control px-3 bg-dark rounded-1" id="emailControlInput" placeholder="請輸入Email">
+              </div>
+              <div class="col-md-6 pe-lg-4 mb-4">
+                <label for="lessonSelect" class="form-label text-secondary mb-2">課程</label>
+                <select id="lessonSelect" class="form-select px-3 bg-dark rounded-1">
+                  <option value="1lesson">1堂50分鐘</option>
+                  <option value="3lesson">3堂50分鐘</option>
+                  <option value="10lesson">10堂50分鐘</option>
+                  <option value="20lesson">20堂50分鐘</option>
+                  <option value="customized">洽談報價</option>
+                </select>
+              </div>
+              <div class="col-md-6 ps-lg-4 mb-4">
+                <label for="reserveInput" class="form-label text-secondary mb-2">想預約的日期</label>
+                <input type="text" class="form-control px-3 bg-dark rounded-1" id="reserveInput" name="reserve_input" placeholder="請選擇日期">
+              </div>
+              <div class="col-md-12 mb-4">
+                <label for="locateInput" class="form-label text-secondary mb-2">上課地點</label>
+                <input type="text" class="form-control px-3 bg-dark rounded-1" id="locateInput" placeholder="請輸入上課地點">
+              </div>
+              <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-between gap-4">
+                <div class="fs-5 font-monospace mb-0">NT$1600</div>
+                <button type="button" class="btn btn-horizontal btn-gradient btn-reverse fs-5 px-6" data-bs-dismiss="modal">下一步</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section> 
@@ -129,6 +189,8 @@
 
     <script src="./assets/js/vendors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/locales/zh-TW.js"></script>
     <script src="./assets/js/all.js"></script>
   </body>
 
