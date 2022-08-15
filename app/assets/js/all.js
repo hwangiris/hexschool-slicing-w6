@@ -8,4 +8,8 @@ $(function() {
       el: ".function__pagination",
     },
   });
+  const elem = document.querySelector('input[name="reserve_input"]');
+  const datepicker = new Datepicker(elem, {
+    language: "zh-TW"
+  });
 });
