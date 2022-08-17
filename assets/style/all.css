@@ -12737,10 +12737,6 @@ body.payment-page {
   background-color: #dee2e6;
 }
 
-.step__item.process + .step__item::before {
-  background-color: #dee2e6;
-}
-
 .step__item .rounded-circle {
   position: relative;
   border: 1px solid;
