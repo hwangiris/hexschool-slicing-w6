@@ -44,11 +44,6 @@
     &::after {
       background-color: $gray-300;
     }
-    + .step__item {
-      &::before {
-        background-color: $gray-300;
-      }
-    }
   }
   .rounded-circle {
     position: relative;
